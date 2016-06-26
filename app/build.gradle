@@ -17,6 +17,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    productFlavors {
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+
+        }
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+    }
 }
 
 dependencies {
@@ -24,7 +35,13 @@ dependencies {
     // Added for AdMob
     compile project(':jokeAndroidLibrary')
     compile project(':JokeTeller')
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.google.android.gms:play-services:9.0.2'
     compile project(path: ':backend', configuration: 'android-endpoints')
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.google.android.gms:play-services:9.0.2'
+/*    compile 'com.google.android.gms:play-services-ads:9.0.2'
+    compile 'com.google.android.gms:play-services-analytics:9.0.2'
+    compile 'com.google.android.gms:play-services-auth:9.0.2'
+    compile 'com.google.android.gms:play-services-gcm:9.0.2'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:support-v4:23.3.0'*/
 }

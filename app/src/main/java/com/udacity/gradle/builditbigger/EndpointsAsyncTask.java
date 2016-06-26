@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Created by ryand on 6/20/2016.
  */
-class EndpointsAsyncTask extends AsyncTask<OnJokeReceivedListener, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<OnJokeReceivedListener, Void, String> {
   private static JokeApi myApiService = null;
   private Context context;
   private OnJokeReceivedListener listener;
@@ -26,7 +26,6 @@ class EndpointsAsyncTask extends AsyncTask<OnJokeReceivedListener, Void, String>
     if(myApiService == null) {  // Only do this once
               JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
               .setRootUrl("https://build-it-bigger-1349.appspot.com/_ah/api/");
-      // end options for devappserver
 
       myApiService = builder.build();
     }
